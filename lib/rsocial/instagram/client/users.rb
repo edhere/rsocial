@@ -5,13 +5,13 @@ module RSocial
         def user(handle)
           run(
             "https://www.instagram.com/#{handle}/",
-            user_executables
+            user_injections
           ).merge(:handle => handle)
         end
 
         private
 
-        def user_executables
+        def user_injections
           {
             :posts => "return document.getElementsByClassName('_s53mj')[0].getElementsByClassName('_bkw5z')[0].innerHTML",
             :followers => "return document.getElementsByClassName('_s53mj')[1].getElementsByClassName('_bkw5z')[0].innerHTML",
