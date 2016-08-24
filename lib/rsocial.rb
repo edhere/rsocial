@@ -1,4 +1,5 @@
 require 'rsocial/driver'
+require 'rsocial/runner'
 require 'rsocial/instagram'
 require 'rsocial/instagram/client'
 require 'rsocial/facebook'

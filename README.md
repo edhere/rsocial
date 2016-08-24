@@ -35,7 +35,7 @@ require 'rsocial'
 
 client = RSocial::Facebook.client(:requesting_handle => "my_handle")
 
-client.user("TransWorldSkate")        #=> {:handle => "TransWorldSkate", :followers => "1,667,861 likes"}
+client.page("TransWorldSkate")     #=> {:handle => "TransWorldSkate", :followers => "1,667,861 likes"}
 ```
 
 ## Contributing
