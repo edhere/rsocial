@@ -6,11 +6,11 @@ module RSocial
       @options = options
     end
 
-    def run(url, executables)
+    def run(url, injections)
       while_headless do
         Driver.instance.firefox.navigate.to url
-        execute_each do
-          executables
+        inject_each do
+          injections
         end
       end
     end
@@ -25,7 +25,7 @@ module RSocial
       headless.destroy
     end
 
-    def execute_each(&block)
+    def inject_each(&block)
       results = {}
       block.call.each do |key, script|
         results[key.to_sym] = execute(script)
