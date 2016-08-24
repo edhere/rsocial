@@ -1,8 +1,8 @@
-= RSocial
+## RSocial
 
 A gem for crawling social media stats on various web entities
 
-== Installation
+## Installation
 
 Add this line to your application's Gemfile:
 
@@ -16,9 +16,9 @@ Or install it yourself:
 
     $ gem install rsocial
 
-== Usage
+## Usage
 
-See example usage for Instagram stats:
+#### Instagram
 
 ```ruby
 require 'rsocial'
@@ -28,7 +28,17 @@ client = RSocial::Instagram.client(:requesting_handle => "my_handle")
 client.user("the_skatenerd")        #=> {:handle => "the_skatenerd", :posts => "1,140", :followers => "59.8k", :following => "920"}
 ```
 
-== Contributing to rsocial
+#### Facebook
+
+```ruby
+require 'rsocial'
+
+client = RSocial::Facebook.client(:requesting_handle => "my_handle")
+
+client.user("TransWorldSkate")        #=> {:handle => "TransWorldSkate", :followers => "1,667,861 likes"}
+```
+
+## Contributing
 
 * Fork the project.
 * Start a feature/bugfix branch.
