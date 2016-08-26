@@ -1,7 +1,7 @@
 module RSocial
-  module Facebook
+  module Youtube
     def self.client(options={})
-      Facebook::Client.new(options)
+      Youtube::Client.new(options)
     end
   end
 end

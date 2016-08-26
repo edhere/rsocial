@@ -1,7 +1,7 @@
 module RSocial
-  module Facebook
+  module Twitter
     def self.client(options={})
-      Facebook::Client.new(options)
+      Twitter::Client.new(options)
     end
   end
 end
