@@ -6,7 +6,7 @@ module RSocial
           run(
             "https://www.youtube.com/channel/#{channel_id}/",
             channel_injections
-          ).merge(:handle => handle)
+          ).merge(:channel_id => channel_id)
         end
 
         private

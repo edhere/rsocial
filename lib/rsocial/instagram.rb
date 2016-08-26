@@ -1,4 +1,3 @@
-
 module RSocial
   module Instagram
     def self.client(options={})
