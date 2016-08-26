@@ -7,11 +7,17 @@ module RSocial
     end
 
     def run(url, injections)
-      while_headless do
-        Driver.instance.firefox.navigate.to url
-        inject_each do
-          injections
+      begin
+        while_headless do
+          Driver.instance.firefox.navigate.to url
+          inject_each do
+            injections
+          end
         end
+      rescue Net::ReadTimeout => e
+        {
+          :error => e
+        }
       end
     end
 
