@@ -1,0 +1,2 @@
+describe RSocial do
+end

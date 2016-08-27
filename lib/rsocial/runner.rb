@@ -1,7 +1,7 @@
 require 'headless'
 
 module RSocial
-  class Runner
+  class Runner < Utils
     def initialize(options={})
       @options = options
     end
@@ -41,7 +41,7 @@ module RSocial
 
     def execute(script)
       begin
-        Driver.instance.firefox.execute_script(script)
+        h2n(Driver.instance.firefox.execute_script(script))
       rescue Selenium::WebDriver::Error::JavascriptError
         "Javascript Error"
       rescue Selenium::WebDriver::Error::UnknownError

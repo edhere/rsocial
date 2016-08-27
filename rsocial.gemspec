@@ -4,8 +4,14 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'rsocial'
 
 Gem::Specification.new do |s|
-  s.add_development_dependency('rake', '~> 0.9.2.2')
-  s.add_development_dependency('rspec', '~> 2.4')
+  s.add_development_dependency "rake"
+  s.add_development_dependency "rspec"
+  s.add_development_dependency "rspec-nc"
+  s.add_development_dependency "guard"
+  s.add_development_dependency "guard-rspec"
+  s.add_development_dependency "pry"
+  s.add_development_dependency "pry-remote"
+  s.add_development_dependency "pry-nav"
   s.add_runtime_dependency('selenium-webdriver', '~> 2.53', '>= 2.53.4')
   s.add_runtime_dependency('headless', '~> 2.3', '>= 2.3.0')
   s.description   = "A ruby social media stat crawler"
