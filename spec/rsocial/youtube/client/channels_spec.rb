@@ -8,8 +8,8 @@ describe RSocial::Youtube::Client::Channels do
 
     #{:subscribers=>"5,016", :channel_id=>"UCXScCWtV6cFkiIMRioSWMEA"}
     it 'should find user stats' do
-      expect(@user[:subscribers]).to be_an String
-      expect(@user[:channel_id]).to be_an String
+      expect(@channel[:subscribers]).to be_an Integer
+      expect(@channel[:channel_id]).to be_an String
     end
 
   end

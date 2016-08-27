@@ -8,7 +8,7 @@ describe RSocial::Youtube::Client::Users do
 
     #{:subscribers=>"11,131", :handle=>"ryanbingham"}
     it 'should find user stats' do
-      expect(@user[:subscribers]).to be_an String
+      expect(@user[:subscribers]).to be_an Integer
       expect(@user[:handle]).to be_an String
     end
 

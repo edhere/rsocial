@@ -8,10 +8,10 @@ describe RSocial::Twitter::Client::Users do
 
     #{:tweets=>"5,668", :following=>"633", :followers=>"39.8K", :likes=>"14.8K", :handle=>"RyanBingham"}
     it 'should find user stats' do
-      expect(@user[:tweets]).to be_an String
-      expect(@user[:following]).to be_an String
-      expect(@user[:followers]).to be_an String
-      expect(@user[:likes]).to be_an String
+      expect(@user[:tweets]).to be_an Integer
+      expect(@user[:following]).to be_an Integer
+      expect(@user[:followers]).to be_an Integer
+      expect(@user[:likes]).to be_an Integer
       expect(@user[:handle]).to be_an String
     end
 

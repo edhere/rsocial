@@ -1,3 +1,4 @@
+require 'rsocial/utils'
 require 'rsocial/driver'
 require 'rsocial/runner'
 require 'rsocial/instagram'
@@ -10,5 +11,5 @@ require 'rsocial/youtube'
 require 'rsocial/youtube/client'
 
 module RSocial
-  VERSION = '0.3.1'
+  VERSION = '0.4.0'
 end
