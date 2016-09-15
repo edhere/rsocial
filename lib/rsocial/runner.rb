@@ -3,13 +3,13 @@ require 'headless'
 module RSocial
   class Runner < Utils
     def initialize(options={})
-      @options = options
+      @wd = Selenium::WebDriver.for :firefox
     end
 
     def run(url, injections)
       begin
         while_headless do
-          Driver.instance.firefox.navigate.to url
+          @wd.navigate.to url
           inject_each do
             injections
           end
@@ -24,6 +24,7 @@ module RSocial
     private
 
     def while_headless
+      #Headless::Exception: Xvfb not found on your system
       headless = Headless.new
       headless.start
       yield
@@ -41,7 +42,7 @@ module RSocial
 
     def execute(script)
       begin
-        h2n(Driver.instance.firefox.execute_script(script))
+        h2n(@wd.execute_script(script))
       rescue Selenium::WebDriver::Error::JavascriptError
         "Javascript Error"
       rescue Selenium::WebDriver::Error::UnknownError

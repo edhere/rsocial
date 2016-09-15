@@ -11,5 +11,5 @@ require 'rsocial/youtube'
 require 'rsocial/youtube/client'
 
 module RSocial
-  VERSION = '0.4.0'
+  VERSION = '0.5.0'
 end
