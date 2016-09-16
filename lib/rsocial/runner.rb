@@ -3,12 +3,13 @@ require 'headless'
 module RSocial
   class Runner < Utils
     def initialize(options={})
-      @wd = Selenium::WebDriver.for :chrome
     end
 
     def run(url, injections)
       begin
-        while_headless do
+        #Headless::Exception: Xvfb not found on your system
+        Headless.ly do
+          @wd = Selenium::WebDriver.for :chrome
           @wd.navigate.to url
           inject_each do
             injections
@@ -22,15 +23,6 @@ module RSocial
     end
 
     private
-
-    def while_headless
-      #Headless::Exception: Xvfb not found on your system
-      headless = Headless.new
-      headless.start
-      yield
-    ensure
-      headless.destroy
-    end
 
     def inject_each(&block)
       results = {}
