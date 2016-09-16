@@ -3,7 +3,7 @@ require 'headless'
 module RSocial
   class Runner < Utils
     def initialize(options={})
-      @wd = Selenium::WebDriver.for :firefox
+      @wd = Selenium::WebDriver.for :chrome
     end
 
     def run(url, injections)

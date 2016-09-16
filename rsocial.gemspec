@@ -12,8 +12,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency "pry"
   s.add_development_dependency "pry-remote"
   s.add_development_dependency "pry-nav"
-  s.add_runtime_dependency('selenium-webdriver', '~> 2.53', '>= 2.53.4')
-  s.add_runtime_dependency('headless', '~> 2.3', '>= 2.3.0')
+  s.add_runtime_dependency('selenium-webdriver', '~> 3.0.0.beta3.1', '>= 3.0.0.beta3.1')
+  s.add_runtime_dependency('headless', '~> 2.3', '>= 2.3.1')
   s.description   = "A ruby social media stat crawler"
   s.date          = Time.now.utc.strftime("%Y-%m-%d")
   s.name          = 'rsocial'
