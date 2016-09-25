@@ -3,13 +3,14 @@ require 'headless'
 module RSocial
   class Runner < Utils
     def initialize(options={})
+      @options = options
     end
 
     def run(url, injections)
       begin
         #Headless::Exception: Xvfb not found on your system
         Headless.ly do
-          @wd = Selenium::WebDriver.for :chrome
+          @wd = Driver.instance.send( @options[:browser] )
           @wd.navigate.to url
           inject_each do
             injections
