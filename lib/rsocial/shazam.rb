@@ -1,7 +1,7 @@
 module RSocial
-  module Instagram
+  module Shazam
     def self.client(options={browser:"firefox"})
-      Instagram::Client.new(options)
+      Shazam::Client.new(options)
     end
   end
 end

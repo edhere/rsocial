@@ -1,7 +1,7 @@
 module RSocial
-  module Instagram
+  module Soundcloud
     def self.client(options={browser:"firefox"})
-      Instagram::Client.new(options)
+      Soundcloud::Client.new(options)
     end
   end
 end
