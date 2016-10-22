@@ -10,7 +10,7 @@ module RSocial
       begin
         #Headless::Exception: Xvfb not found on your system
         Headless.ly do
-          @wd = Driver.instance.send( @options[:browser] )
+          @wd = Driver.instance.send( "firefox" ) #@options[:browser]
           @wd.navigate.to url
           inject_each do
             injections

@@ -9,7 +9,11 @@ require 'rsocial/twitter'
 require 'rsocial/twitter/client'
 require 'rsocial/youtube'
 require 'rsocial/youtube/client'
+require 'rsocial/shazam'
+require 'rsocial/shazam/client'
+require 'rsocial/soundcloud'
+require 'rsocial/soundcloud/client'
 
 module RSocial
-  VERSION = '0.6.2'
+  VERSION = '0.7.0'
 end
