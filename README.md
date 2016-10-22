@@ -25,7 +25,8 @@ require 'rsocial'
 
 client = RSocial::Instagram.client(:requesting_handle => "my_handle")
 
-client.user("the_skatenerd")        #=> {:posts=>1149, :followers=>604000, :following=>921, :handle=>"the_skatenerd"}
+client.user("ryanbingham_official")
+  => {:posts=>1502, :followers=>471000, :following=>171, :handle=>"ryanbingham_official"}
 ```
 
 #### Facebook
@@ -35,7 +36,8 @@ require 'rsocial'
 
 client = RSocial::Facebook.client(:requesting_handle => "my_handle")
 
-client.page("TransWorldSkate")     #=> {:followers=>1669313, :handle=>"TransWorldSkate"}
+client.page("RyanBingham")
+  => {:followers=>153418, :handle=>"RyanBingham"}
 ```
 
 #### Twitter
@@ -45,7 +47,8 @@ require 'rsocial'
 
 client = RSocial::Twitter.client(:requesting_handle => "my_handle")
 
-client.page("TransWorldSKATE")     #=> {:tweets=>7360, :following=>299, :followers=>189000, :likes=>90, :handle=>"TransWorldSKATE"}
+client.user("RyanBingham")
+  => {:tweets=>5755, :following=>636, :followers=>404000, :likes=>151000, :handle=>"RyanBingham"}
 ```
 
 #### YouTube
@@ -55,7 +58,31 @@ require 'rsocial'
 
 client = RSocial::Youtube.client(:requesting_handle => "my_handle")
 
-client.user("TransworldSKATEmag")  #=> {:subscribers=>195811, :handle=>"TransworldSKATEmag"}
+client.channel("UCtZ6qwLISrbRkYG2oBYLz3g")
+  => {:subscribers=>11378, :channel_id=>"UCtZ6qwLISrbRkYG2oBYLz3g"}
+```
+
+
+#### Shazam
+
+```ruby
+require 'rsocial'
+
+client = RSocial::Shazam.client(:requesting_handle => "my_handle")
+
+client.user("40229308")
+  => {:followers=>254734, :id=>"40229308"}
+```
+
+#### Soundcloud
+
+```ruby
+require 'rsocial'
+
+client = RSocial::Soundcloud.client(:requesting_handle => "my_handle")
+
+client.user("ryan-bingham")
+  => {:followers=>1988, :tracks=>51, :handle=>"ryan-bingham"}
 ```
 
 ## Contributing
