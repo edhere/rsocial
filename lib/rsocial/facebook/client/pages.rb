@@ -9,26 +9,20 @@ module RSocial
           ).merge(:handle => handle)
         end
 
-        def posts(handle)
-          run(
-            "https://www.facebook.com/#{handle}/posts",
-            posts_injections
-          ).merge(:handle => handle)
+        def pages_instance(handle)
+          wd = Driver.instance.send( "chrome" )
+          wd.get "https://www.facebook.com/#{handle}/"
+          wd
         end
 
         private
 
         def page_injections
           {
-            :followers => "return document.getElementById('PagesLikesCountDOMID').childNodes[0].textContent"
+            :follower_count => "return document.getElementById('PagesLikesCountDOMID').childNodes[0].textContent"
           }
         end
 
-        def posts_injections
-          {
-            :last_post_reactions => "return document.getElementsByClassName('_4arz')[0].textContent"
-          }
-        end
       end
     end
   end

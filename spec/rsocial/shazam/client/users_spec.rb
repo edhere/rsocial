@@ -8,7 +8,7 @@ describe RSocial::Shazam::Client::Users do
 
     #{:followers=>"254,682"}
     it 'should find user stats' do
-      expect(@user[:followers]).to be_an Integer
+      expect(@user[:follower_count]).to be_an Integer
     end
 
   end
