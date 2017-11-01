@@ -15,5 +15,5 @@ require 'rsocial/soundcloud'
 require 'rsocial/soundcloud/client'
 
 module RSocial
-  VERSION = '0.7.0'
+  VERSION = '3.6.0'
 end

@@ -9,14 +9,20 @@ module RSocial
           ).merge(:handle => handle)
         end
 
+        def users_instance(handle)
+          wd = Driver.instance.send( "chrome" )
+          wd.get "https://twitter.com/#{handle}/"
+          wd
+        end
+
         private
 
         def user_injections
           {
-            :tweets => "return document.getElementsByClassName('ProfileNav-list')[0].childNodes[1].getElementsByClassName('ProfileNav-value')[0].textContent",
-            :following => "return document.getElementsByClassName('ProfileNav-list')[0].childNodes[2].getElementsByClassName('ProfileNav-value')[0].textContent",
-            :followers => "return document.getElementsByClassName('ProfileNav-list')[0].childNodes[3].getElementsByClassName('ProfileNav-value')[0].textContent",
-            :likes => "return document.getElementsByClassName('ProfileNav-list')[0].childNodes[4].getElementsByClassName('ProfileNav-value')[0].textContent"
+            :tweet_count => "return document.getElementsByClassName('ProfileNav-list')[0].childNodes[1].getElementsByClassName('ProfileNav-value')[0].textContent",
+            :following_count => "return document.getElementsByClassName('ProfileNav-list')[0].childNodes[2].getElementsByClassName('ProfileNav-value')[0].textContent",
+            :follower_count => "return document.getElementsByClassName('ProfileNav-list')[0].childNodes[3].getElementsByClassName('ProfileNav-value')[0].textContent",
+            :like_count => "return document.getElementsByClassName('ProfileNav-list')[0].childNodes[4].getElementsByClassName('ProfileNav-value')[0].textContent"
           }
         end
       end

@@ -8,7 +8,7 @@ describe RSocial::Facebook::Client::Pages do
 
     #{:followers=>"149,207 likes", :handle=>"RyanBingham"}
     it 'should find page stats' do
-      expect(@user[:followers]).to be_an Integer
+      expect(@user[:follower_count]).to be_an Integer
       expect(@user[:handle]).to be_an String
     end
 

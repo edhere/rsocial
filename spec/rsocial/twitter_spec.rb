@@ -8,6 +8,6 @@ describe RSocial::Twitter do
     it 'should handle client' do
       expect(@client.class.to_s).to eq "RSocial::Twitter::Client"
     end
-    
+
   end
 end

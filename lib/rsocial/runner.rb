@@ -1,5 +1,3 @@
-require 'headless'
-
 module RSocial
   class Runner < Utils
     def initialize(options={})
@@ -8,13 +6,10 @@ module RSocial
 
     def run(url, injections)
       begin
-        #Headless::Exception: Xvfb not found on your system
-        Headless.ly do
-          @wd = Driver.instance.send( "firefox" ) #@options[:browser]
-          @wd.navigate.to url
-          inject_each do
-            injections
-          end
+        @wd = Driver.instance.send( "chrome" )
+        @wd.get url
+        inject_each do
+          injections
         end
       rescue Net::ReadTimeout => e
         {
@@ -28,19 +23,33 @@ module RSocial
     def inject_each(&block)
       results = {}
       block.call.each do |key, script|
-        results[key.to_sym] = execute(script)
+        response = execute(script)
+        response = h2n(response) if keys.include? key
+        results[key.to_sym] = response
       end
       results
     end
 
     def execute(script)
       begin
-        h2n(@wd.execute_script(script))
+        @wd.execute_script(script)
       rescue Selenium::WebDriver::Error::JavascriptError
         "Javascript Error"
       rescue Selenium::WebDriver::Error::UnknownError
         "Unknown Error"
       end
+    end
+
+    def keys
+      [
+        :follower_count,
+        :following_count,
+        :track_count,
+        :tweet_count,
+        :like_count,
+        :subscriber_count,
+        :post_count
+      ]
     end
   end
 end
