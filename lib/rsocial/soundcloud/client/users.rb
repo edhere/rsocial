@@ -9,12 +9,18 @@ module RSocial
           ).merge(:handle => handle)
         end
 
+        def users_instance(handle)
+          wd = Driver.instance.send( "chrome" )
+          wd.get "https://soundcloud.com/#{handle}/"
+          wd
+        end
+
         private
 
         def user_injections
           {
-            :followers => "return document.getElementsByClassName('infoStats__value')[0].textContent",
-            :tracks => "return document.getElementsByClassName('infoStats__value')[2].textContent"
+            :follower_count => "return document.getElementsByClassName('infoStats__value')[0].textContent",
+            :track_count => "return document.getElementsByClassName('infoStats__value')[2].textContent"
           }
         end
       end

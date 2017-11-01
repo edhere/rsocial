@@ -9,11 +9,17 @@ module RSocial
           ).merge(:handle => handle)
         end
 
+        def users_instance(handle)
+          wd = Driver.instance.send( "chrome" )
+          wd.get "https://www.youtube.com/user/#{handle}/"
+          wd
+        end
+
         private
 
         def user_injections
           {
-            :subscribers => "return document.getElementsByClassName('yt-subscription-button-subscriber-count-branded-horizontal')[0].textContent"
+            :subscriber_count => "return document.getElementsByClassName('yt-subscription-button-subscriber-count-branded-horizontal')[0].textContent"
           }
         end
       end

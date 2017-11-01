@@ -1,5 +1,3 @@
-require 'headless'
-
 module RSocial
   class Utils
     def human_to_number(human)

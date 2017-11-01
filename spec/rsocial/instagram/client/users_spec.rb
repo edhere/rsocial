@@ -8,9 +8,9 @@ describe RSocial::Instagram::Client::Users do
 
     #{:posts=>"1,458", :followers=>"43.8k", :following=>"171", :handle=>"ryanbingham_official"}
     it 'should find user stats' do
-      expect(@user[:posts]).to be_an Integer
-      expect(@user[:following]).to be_an Integer
-      expect(@user[:followers]).to be_an Integer
+      expect(@user[:post_count]).to be_an Integer
+      expect(@user[:following_count]).to be_an Integer
+      expect(@user[:follower_count]).to be_an Integer
       expect(@user[:handle]).to be_an String
     end
 
